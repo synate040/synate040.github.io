@@ -1,0 +1,148 @@
+.skills {
+    padding: 4rem 2rem;
+    background-color: var(--bg-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.skill-category h3 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.skill-category h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    gap: 1rem;
+}
+
+.skill-category li:hover {
+    background-color: var(--hover-color);
+    transform: translateX(5px);
+}
+
+.skill-category li i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-category li:hover i {
+    transform: translateX(3px);
+}
+
+.skill-name {
+    flex: 1;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.progress-bar {
+    flex: 2;
+    background-color: var(--progress-bg);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 1rem;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+    animation: fillProgress 1.5s ease-out forwards;
+}
+
+.percentage {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    min-width: 45px;
+    text-align: right;
+}
+
+/* Animation for progress bars */
+@keyframes fillProgress {
+    from { width: 0; }
+    to { width: var(--progress-width); }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Animation when hovering over skill items */
+.skill-category li:hover .progress {
+    animation: pulse 1s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-category li {
+        padding: 0.3rem;
+    }
+
+    .progress-bar {
+        margin: 0 0.5rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+    }
+}
+
+/* Dark mode specific adjustments */
+.dark-theme .skill-category {
+    background-color: var(--dark-card-bg);
+}
+
+.dark-theme .skill-category li:hover {
+    background-color: var(--dark-hover-color);
+}

@@ -1,0 +1,169 @@
+/* Hobbies Section */
+.hobbies {
+    padding: 5rem 0;
+    background-color: var(--bg-alt);
+}
+
+.hobbies-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.hobby-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hobby-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hobby-card:hover .hobby-icon {
+    transform: scale(1.1);
+    color: var(--secondary-color);
+}
+
+.hobby-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.hobby-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Enhanced Certifications Section */
+.cert-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cert-icon {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-icon {
+    transform: rotate(15deg);
+}
+
+.cert-issuer {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+.cert-rating {
+    color: #ffd700;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.cert-rating i {
+    margin: 0 2px;
+}
+
+.cert-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cert-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.cert-view, .cert-download {
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.cert-view:hover, .cert-download:hover {
+    color: var(--primary-color);
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.cert-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.cert-skills span {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .cert-details {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .cert-skills {
+        justify-content: center;
+    }
+}
